@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Kirti — Student Management System</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <h1>Kirti — Student Management System</h1>
+    <p class="subtitle">Frontend project — BCA 5th Sem</p>
+  </header>
+
+  <main class="container">
+    <section class="form-section">
+      <h2>Add / Edit Student</h2>
+      <form id="studentForm">
+        <input type="hidden" id="editIndex" value="-1" />
+        <div class="form-row">
+          <label for="name">Name</label>
+          <input id="name" type="text" placeholder="Enter student name" required />
+        </div>
+        <div class="form-row">
+          <label for="roll">Roll No.</label>
+          <input id="roll" type="text" placeholder="Enter roll number" required />
+        </div>
+        <div class="form-row">
+          <label for="course">Course</label>
+          <input id="course" type="text" placeholder="e.g., BCA" required />
+        </div>
+        <div class="form-row">
+          <label for="year">Year / Sem</label>
+          <input id="year" type="text" placeholder="e.g., 5th Sem" required />
+        </div>
+
+        <div class="form-actions">
+          <button type="submit" id="saveBtn">Save Student</button>
+          <button type="button" id="clearBtn" class="muted">Clear</button>
+        </div>
+      </form>
+    </section>
+
+    <section class="list-section">
+      <div class="list-header">
+        <h2>Student Records</h2>
+        <div class="controls">
+          <input id="search" placeholder="Search by name, roll or course" />
+          <button id="exportJson" class="muted">Export JSON</button>
+          <button id="importJsonBtn" class="muted">Import JSON</button>
+          <input id="importFile" type="file" accept=".json" style="display:none" />
+        </div>
+      </div>
+
+      <div class="table-wrap">
+        <table id="studentsTable">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Name</th>
+              <th>Roll No.</th>
+              <th>Course</th>
+              <th>Year</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="studentsTbody"></tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <small>Made by Kirti — BCA Student · Hosting-ready for <code>kirtism.epizy.com</code></small>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
